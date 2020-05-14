@@ -3,7 +3,7 @@ This project takes a file created from the AMOSA-clustering algorithm
 
 # Usage
 
-> main.py
+> vote.py
 
 This will calculate the most common clustering for each eye and move them to a folder representing that cluster.
 

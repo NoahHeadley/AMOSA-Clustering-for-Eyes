@@ -1,3 +1,8 @@
+"""
+This script analyzes the demographics of the clusters
+To save the information run
+python analysis.py > {your filename}
+"""
 import os
 import sys
 

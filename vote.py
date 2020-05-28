@@ -56,7 +56,7 @@ for f_index in range(num_cliques):
     lines.pop(0)
 
     clique_nums = []
-    
+
     # Find out which clique this eye is in and place it in a list
     for line in lines:
         line = line.strip().split('   ')
@@ -82,7 +82,6 @@ for y in range(len(buddyships[0])):
     temp = list(temp)
     flat.append(temp)
 
-
 # Make a graph showing all the points in space
 
 graph = {
@@ -104,9 +103,9 @@ for l in range(len(mst)):
     if(l > len(mst)):
         break
     (w, x, y) = mst[l]
-    
+
     # weight is being hard coded but this gives the desired output for now.
-    if (w > 5):
+    if (w > num_cliques/2):
         s_mst.append(mst[l])
 
 filename = 's_mst.txt'
@@ -141,12 +140,14 @@ for x in range(len(s_mst)):
     out_pts.append(p_out)
     in_pts.append(p_in)
 
+
 G = connection.Graph(num_buddys)
 for x in range(len(out_pts)):
     G.addEdge(out_pts[x], in_pts[x])
 
-# Get all points that are connected to each other    
+# Get all points that are connected to each other
 cc = G.connectedComponents()
+
 
 clusters = []
 for x in range(num_buddys):
@@ -157,10 +158,9 @@ for x in range(num_buddys):
 # Move files to their final cluster
 source = './all/'
 files = os.listdir(source)
-
 for file in files:
     cluster_val = clusters.pop(0) + 1
-    if not os.path.exists(source):
-        os.makedirs(f"{cluster_num}")
+    if not os.path.exists(f'./{cluster_val}'):
+        os.mkdir(f"./{cluster_val}")
     dest = f'./{cluster_val}/'
     shutil.move(source+file, dest)

@@ -1,6 +1,6 @@
 # AMOSA-Clustering-for-Eyes
 
-This project is the next step of the project started here (https://github.com/Noahkito/Face-Feature-Classification). It takes a collection of eye crops and a collection of clustering files associated with those eye crops. Place each of the eye crops into /all/ before running the code.
+This project is the next step of the project started here (https://github.com/Noahkito/Face-Feature-Classification). It takes a collection of eye crops and a collection of clustering files associated with those eye crops. Place each of the eye crops for one of the given types (left or right) into /all/ before running the code.
 
 # Installation
 
